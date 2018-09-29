@@ -14,19 +14,19 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
-          <ul>
+          <ul className="App-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/albums">Albums</Link></li>
           </ul>
         </header>
-        <p className="App-intro">
+        <div className="App-intro">
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/albums" component={Albums}/>
             <Route path="/albums/:id" component={AlbumDetails}/>
             <Redirect to="/" />
           </Switch>
-        </p>
+        </div>
       </div>
     );
   }
