@@ -20,12 +20,8 @@ class App extends Component {
           </ul>
         </header>
         <div className="App-intro">
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/albums" component={Albums}/>
-            <Route path="/albums/:id" component={AlbumDetails}/>
-            <Redirect to="/" />
-          </Switch>
+          <Route path="/albums" component={Albums}/>
+          <Route path="/albums/:id" component={AlbumDetails}/>
         </div>
       </div>
     );

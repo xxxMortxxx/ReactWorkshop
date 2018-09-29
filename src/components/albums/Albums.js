@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Loading from '../loading/Loading';
 
 const albumsURL = 'https://jsonplaceholder.typicode.com/albums';
 
@@ -19,14 +21,18 @@ export default class Albums extends React.Component {
   }
 
   renderAlbums = album => (
-    <li key={album.id}>{album.title}</li>
+    <li key={album.id}>
+      <Link to={`/albums/${album.id}`}>{album.title}</Link>
+    </li>
   );
 
   render() {
+    const { data, isLoading } = this.state;
+
     return (
-      <ul>
-        {this.state.data.map(this.renderAlbums)}
-      </ul>
+      <Loading isLoading={isLoading}>
+        <ul>{data.map(this.renderAlbums)}</ul>
+      </Loading>
     )
   }
 }
