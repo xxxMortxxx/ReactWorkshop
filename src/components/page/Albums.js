@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Albums from '../albums/Albums';
+import AlbumsContainer from '../albums/Albums.container';
 
 export default () => (
   <div>
     <h1>Albums page</h1>
-    <Albums/>
+    <AlbumsContainer/>
   </div>
 );

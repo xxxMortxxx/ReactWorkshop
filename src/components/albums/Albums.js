@@ -3,21 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../loading/Loading';
 
-const albumsURL = 'https://jsonplaceholder.typicode.com/albums';
-
 export default class Albums extends React.Component {
-  state = {
-    data: [],
-    isLoading: true
-  };
-
   componentDidMount() {
-    fetch(albumsURL)
-      .then(response => response.json())
-      .then(data => this.setState({
-        data,
-        isLoading: false,
-      }))
+    this.props.requestAlbums();
   }
 
   renderAlbums = album => (
@@ -27,7 +15,7 @@ export default class Albums extends React.Component {
   );
 
   render() {
-    const { data, isLoading } = this.state;
+    const { data, isLoading } = this.props;
 
     return (
       <Loading isLoading={isLoading}>
