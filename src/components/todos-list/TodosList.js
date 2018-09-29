@@ -17,11 +17,11 @@ export default class TodosList extends React.Component {
     return (
       <React.Fragment>
         <input
-          ref={(elem) => this.inputInstance = elem}
+          value={inputValue}
           type="text"
           onChange={(event) => onNewTodoInputChange(event.target.value)}
         />
-        <button onClick={() => onAddTodoClick(this.inputInstance.value)}>Add todo</button>
+        <button onClick={onAddTodoClick}>Add todo</button>
         <ul>{todos.map(this.renderTodo)}</ul>
       </React.Fragment>
     )

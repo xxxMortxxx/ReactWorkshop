@@ -6,8 +6,9 @@ export default () => (
   <div>
     <h2>Todos List</h2>
     <TodosList
+      inputValue="fdsfsd"
       todos={ [todo1] }
-      onAddTodoClick={(todoText) => console.log(todoText)}
+      onAddTodoClick={() => console.log('click')}
       onNewTodoInputChange={(newInput) => console.log(newInput)}
     />
   </div>
