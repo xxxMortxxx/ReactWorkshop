@@ -9,10 +9,11 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
 import rootReducer from './reducers';
+const composeExtension = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk)
+  composeExtension(applyMiddleware(thunk))
 );
 
 ReactDOM.render(

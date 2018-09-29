@@ -22,7 +22,7 @@ class App extends Component {
         <div className="App-intro">
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/albums" component={Albums}/>
+            <Route exact path="/albums" component={Albums}/>
             <Route path="/albums/:id" component={AlbumDetails}/>
             <Redirect to="/" />
           </Switch>
