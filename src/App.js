@@ -6,6 +6,7 @@ import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import Home from './components/page/Home';
 import Albums from './components/page/Albums';
 import AlbumDetails from './components/page/AlbumDetails';
+import TodosPage from './components/page/TodosPage';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <ul className="App-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/albums">Albums</Link></li>
+            <li><Link to="/todos">Todos</Link></li>
           </ul>
         </header>
         <div className="App-intro">
@@ -24,6 +26,7 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route exact path="/albums" component={Albums}/>
             <Route path="/albums/:id" component={AlbumDetails}/>
+            <Route path="/todos" component={TodosPage}/>
             <Redirect to="/" />
           </Switch>
         </div>
